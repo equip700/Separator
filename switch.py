@@ -1,7 +1,8 @@
 import json
 fin=open("logins.txt","r")
-email=open("email.txt","a")
-referal=open("referal.txt","a")
+# email=open("email.txt","a")
+output=open("output.txt","a")
+# referal=open("referal.txt","a")
 big_string = fin.read()
 fin.close()
 entries=big_string.split('\n')
@@ -14,8 +15,8 @@ def mail():
         # r=entries[(1+num)]
         if i%3==0 and entries[i]!="":
             e=entries[i]
-            email.write(e+" "+str(int(times)*20)+"\n")
-    print (email)
+            output.write(e+" "+str(int(times)*20)+"\n")
+    print (output)
 def ref():
     for i in range(len(entries)):
         # num=(2*i)
@@ -25,8 +26,8 @@ def ref():
             r=entries[i]
             link.append(r)
             # referal.write(str(link)+"\n")
-    referal.write(json.dumps(link)+"\n")
-    print (referal)
+    output.write(json.dumps(link)+"\n")
+    print (output)
     # print link
 
 mail()
