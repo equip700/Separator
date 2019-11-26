@@ -14,8 +14,8 @@ def mail():
         # r=entries[(1+num)]
         if i%3==0 and entries[i]!="":
             e=entries[i]
-            email.write(e+" "+str(times*20)+"\n")
-    print email
+            email.write(e+" "+str(int(times)*20)+"\n")
+    print (email)
 def ref():
     for i in range(len(entries)):
         # num=(2*i)
@@ -26,7 +26,7 @@ def ref():
             link.append(r)
             # referal.write(str(link)+"\n")
     referal.write(json.dumps(link)+"\n")
-    print referal
+    print (referal)
     # print link
 
 mail()
